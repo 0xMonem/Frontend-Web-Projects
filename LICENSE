@@ -1,26 +1,28 @@
-# MIT License
+MIT License
 
-**Copyright (c) 2025 Mohamed Abdel Moneim**
+Copyright (c) 2025 Mohamed Abdel Moneim
 
-Permission is hereby granted, **free of charge**, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software **without restriction**, including without limitation the rights to:
+Permission is hereby granted, free of charge, to any person obtaining a copy 
+of this software and associated documentation files (the "Software"), to deal 
+in the Software without restriction, including without limitation the rights 
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
+copies of the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions:
 
-- Use the Software for personal, educational, or commercial purposes  
-- Copy and distribute the Software  
-- Modify, merge, or adapt the Software  
-- Sublicense and/or sell copies of the Software  
+1. Preservation of Copyright and License Notices:
+   The above copyright notice and this permission notice must be included in 
+   all copies or substantial portions of the Software.
 
-This permission is granted subject to the following conditions:
+2. No Warranty:
+   The Software is provided "as is", without any warranty of any kind, either 
+   express or implied, including but not limited to warranties of 
+   merchantability, fitness for a particular purpose, or non-infringement.
 
-1. **Preservation of Copyright and License Notices**  
-   The above copyright notice and this permission notice must be included in all copies or substantial portions of the Software.
+3. Limitation of Liability:
+   In no event shall the author or copyright holder be liable for any claim, 
+   damages, or other liability, whether in an action of contract, tort, or 
+   otherwise, arising from, out of, or in connection with the Software or the 
+   use or other dealings in the Software.
 
-2. **No Warranty**  
-   The Software is provided "as is", without warranty of any kind, either express or implied, including but not limited to warranties of **merchantability, fitness for a particular purpose, or non-infringement**.
-
-3. **Limitation of Liability**  
-   In no event shall the author or copyright holder be liable for any claim, damages, or other liability arising from, out of, or in connection with the Software or its use.
-
----
-
-**Mohamed Abdel Moneim** © 2025  
-**Developer / Frontend Engineer**
+© Mohamed Abdel Moneim
+Developer / Frontend Engineer
