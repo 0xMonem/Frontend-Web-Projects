@@ -26,5 +26,5 @@ All projects are structured for clarity, maintainability, and learning, making t
 ---
 
 ## ✒️ Developer
-**Mohamed Abdel Moneim** © 2025  
+**© Mohamed Abdel Moneim**  
 Frontend Developer | UI/UX Enthusiast | Web Interface Creator
