@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuminaWiki | Detail View</title>
+    <!-- Libs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+    <div id="progressBar" class="progress-bar"></div>
+
+    <!-- Exit Focus Button -->
+    <button id="exitFocusBtn" class="exit-focus-btn hidden" title="Exit Focus Mode">
+        <i class="fas fa-compress"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="mainNav">
+        <a href="../index.html" class="logo-text">LuminaWiki</a>
+        <div class="nav-controls">
+            <button id="langToggleGlobal" class="icon-btn" title="Switch Language">EN</button>
+            <button id="focusBtn" class="icon-btn" title="Focus Mode"><i class="fas fa-expand"></i></button>
+            <button id="themeToggleDetails" class="icon-btn"><i class="fas fa-moon"></i></button>
+            <a href="../index.html" class="icon-btn"><i class="fas fa-search"></i></a>
+        </div>
+    </nav>
+
+    <!-- Toolbar -->
+    <div class="toolbar-container" id="smartToolbar">
+        <div class="toolbar-inner">
+            <button id="bookmarkBtn" title="Save"><i class="far fa-bookmark"></i></button>
+            <button id="langBtn" title="Wiki Languages"><i class="fas fa-globe"></i></button>
+            <div class="divider"></div>
+            <button id="fontDownBtn"><i class="fas fa-minus"></i></button>
+            <button id="fontUpBtn"><i class="fas fa-plus"></i></button>
+            <div class="divider"></div>
+            <button id="shareBtn"><i class="fas fa-share-alt"></i></button>
+            <button id="pdfBtn"><i class="fas fa-file-pdf"></i></button>
+        </div>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="layout-container">
+        
+        <aside class="toc-sidebar" id="tocSidebar">
+            <h3 data-i18n="contents">Contents</h3>
+            <ul id="tocList"></ul>
+        </aside>
+
+        <main id="content" class="main-content hidden">
+            
+            <header class="hero-header">
+                <div class="image-wrapper">
+                    <img id="wikiImage" src="" alt="Cover" class="zoomable">
+                </div>
+                <div class="header-details">
+                    <h1 id="wikiTitle" data-i18n="loading">Loading...</h1>
+                    
+                    <div class="meta-row">
+                        <span id="readTime" class="meta-badge"><i class="far fa-clock"></i> ... <span data-i18n="read_time">min read</span></span>
+                        <span id="langTag" class="tag"></span>
+                    </div>
+
+                    <div id="quickSummary" class="summary-box">
+                        <strong><i class="fas fa-bolt"></i> <span data-i18n="abstract">Abstract:</span></strong>
+                        <p id="summaryText">...</p>
+                    </div>
+                </div>
+            </header>
+
+            <section id="gallerySection" class="gallery-strip hidden"></section>
+
+            <article id="printArea" class="article-body">
+                <div id="wikiText" class="content-text"></div>
+            </article>
+
+            <!-- Related Topics -->
+            <section class="related-section" id="relatedSec">
+                <h3><i class="fas fa-link"></i> <span data-i18n="related_topics">Related Topics</span></h3>
+                <div id="relatedContainer" class="related-grid"></div>
+            </section>
+        </main>
+    </div>
+
+    <div id="loader" class="loader-container"><div class="spinner"></div></div>
+
+    <!-- Modals -->
+    <div id="langModal" class="modal hidden">
+        <div class="modal-content">
+            <h3 data-i18n="languages">Languages</h3>
+            <div id="langList" class="lang-grid"></div>
+            <button class="close-modal" data-i18n="close">Close</button>
+        </div>
+    </div>
+
+    <div id="shareModal" class="modal hidden">
+        <div class="modal-content">
+            <h3 data-i18n="share">Share</h3>
+            <div class="share-icons">
+                <a id="waShare" target="_blank" class="s-btn wa"><i class="fab fa-whatsapp"></i></a>
+                <a id="fbShare" target="_blank" class="s-btn fb"><i class="fab fa-facebook"></i></a>
+            </div>
+            <button class="close-modal" data-i18n="close">Close</button>
+        </div>
+    </div>
+
+    <div id="lightboxModal" class="modal hidden lightbox">
+        <button id="closeLightbox" class="close-lightbox"><i class="fas fa-times"></i></button>
+        <img id="lightboxImg" src="" alt="Full View">
+    </div>
+
+    <div id="selTooltip" class="selection-tooltip hidden">
+        <span id="selTerm">Term</span>
+        <button id="selSearchBtn"><i class="fas fa-search"></i></button>
+    </div>
+
+    <script src="../js/langHandler.js"></script>
+    <script src="../js/wiki.js"></script>
+</body>
+</html>
