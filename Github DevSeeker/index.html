@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" class="landing-mode">
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport for full responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>DevSeeker | Pro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Fonts: Outfit (UI) & JetBrains Mono (Code) -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header (Fixed Top - Visible in Dashboard) -->
+    <header class="top-header">
+        <!-- Left: Language Toggle -->
+        <div class="header-left">
+            <button id="langBtn" class="lang-toggle-btn">EN/AR</button>
+        </div>
+
+        <!-- Center: Brand Name & Analysis Tools -->
+        <div class="header-center">
+            <span class="brand-name">DevSeeker</span>
+            <nav class="analysis-tools">
+                <button class="tool-btn" id="btnHabits" title="Habits"><i class="fa-solid fa-clock-rotate-left"></i> <span data-i18n="toolHabits">Habits</span></button>
+                <button class="tool-btn" id="btnResume" title="Resume"><i class="fa-solid fa-file-invoice"></i> <span data-i18n="toolResume">Resume</span></button>
+                <button class="tool-btn" id="btnInsights" title="Insights"><i class="fa-solid fa-chart-pie"></i> <span data-i18n="toolInsights">Insights</span></button>
+            </nav>
+        </div>
+        
+        <!-- Right: Back Button -->
+        <div class="header-right">
+            <button id="backToHomeBtn" class="new-search-btn" title="New Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Layout Container -->
+    <main class="main-layout">
+        
+        <!-- Sidebar (Search in Landing / Profile in Dashboard) -->
+        <aside class="sidebar">
+            
+            <!-- LANDING HEADER (Only in Landing Mode) -->
+            <div class="landing-header">
+                <div class="logo-wrapper" id="landingLogo">
+                    <i class="fa-brands fa-github-alt main-icon"></i>
+                </div>
+                <h1 class="app-title">DevSeeker</h1>
+                <p class="app-subtitle" data-i18n="tagline">Discover GitHub Profiles with Style</p>
+            </div>
+
+            <!-- SEARCH BAR (Kinetic Effect) -->
+            <div class="search-container">
+                <div class="kinetic-border">
+                    <div class="search-inner">
+                        <i class="fa-solid fa-magnifying-glass search-icon-deco"></i>
+                        <input type="text" id="searchInput" data-i18n-placeholder="searchPlaceholder" autocomplete="off">
+                        <button id="searchBtn"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Info (Only in Dashboard Mode) -->
+            <div id="profileInfo" class="profile-details hidden">
+                <div class="avatar-wrapper">
+                    <img id="avatar" src="" alt="Avatar">
+                    <span id="hireableBadge" class="badge hidden">Hireable</span>
+                </div>
+
+                <div class="identity">
+                    <!-- Icon added next to name as requested -->
+                    <h1 class="user-name-row">
+                        <i class="fa-brands fa-github-alt profile-icon"></i> 
+                        <span id="name">Name</span>
+                    </h1>
+                    <a id="username" href="#" target="_blank">@username</a>
+                    <span id="userType" class="type-tag">User</span>
+                </div>
+
+                <p id="bio">Bio goes here...</p>
+
+                <div class="meta-data">
+                    <div class="meta-item"><i class="fa-solid fa-location-dot"></i> <span id="location">Location</span></div>
+                    <div class="meta-item"><i class="fa-solid fa-building"></i> <span id="company">Company</span></div>
+                    <div class="meta-item"><i class="fa-solid fa-link"></i> <a id="blog" href="#" target="_blank">Website</a></div>
+                    <div class="meta-item"><i class="fa-brands fa-twitter"></i> <a id="twitter" href="#" target="_blank">Twitter</a></div>
+                    <div class="meta-item highlight"><i class="fa-regular fa-calendar"></i> <span id="joined">Date</span></div>
+                    <div class="meta-item"><i class="fa-solid fa-hourglass-half"></i> <span id="accountAge">0 Years</span></div>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-item clickable" id="btnFollowers">
+                        <strong id="followers">0</strong>
+                        <span data-i18n="followers">Followers</span>
+                    </div>
+                    <div class="stat-item clickable" id="btnFollowing">
+                        <strong id="following">0</strong>
+                        <span data-i18n="following">Following</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong id="totalStars" style="color:var(--accent)">0</strong>
+                        <span data-i18n="stars">Stars</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Content (Only in Dashboard Mode) -->
+        <section id="contentArea" class="content-area hidden">
+            <!-- Contribution Graph -->
+            <div class="seamless-block">
+                <img id="contribGraph" class="graph-img" src="" alt="Contributions">
+            </div>
+
+            <!-- Languages Bar -->
+            <div class="seamless-block">
+                <h3 data-i18n="langs">Top Languages</h3>
+                <div id="langList" class="lang-bars"></div>
+            </div>
+
+            <!-- Repositories List -->
+            <div class="seamless-block">
+                <h3 data-i18n="repos">Repositories</h3>
+                <div id="repoList" class="repo-list"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal System -->
+    <div id="modal" class="modal-overlay hidden">
+        <div class="modal-window">
+            <div class="modal-header">
+                <h2 id="modalTitle">Title</h2>
+                <button id="closeModal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="modalBody" class="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loader" class="loader hidden"><div class="spinner"></div></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
