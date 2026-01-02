@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Market</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fa-solid fa-coins"></i> Crypto Market
+            </div>
+            <div class="global-stats">
+                <div class="stat-item">
+                    <i class="fa-solid fa-globe"></i> Coins: <b id="global-coins-count">...</b>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Ticker Section -->
+    <div class="ticker-wrap">
+        <div class="ticker-label"><i class="fa-solid fa-tower-broadcast"></i> LIVE</div>
+        <div class="ticker">
+            <div id="ticker-content" class="ticker-content">
+                <span>Connecting to market data feed...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Page Title -->
+        <div class="market-header">
+            <h1>Market Overview</h1>
+            <p>Real-time cryptocurrency prices & market cap.</p>
+        </div>
+
+        <!-- Table Section -->
+        <div class="table-card">
+            <div class="table-scroll-container">
+                <table class="crypto-table">
+                    <thead>
+                        <tr>
+                            <th class="col-rank">#</th>
+                            <th class="col-name">Coin</th>
+                            <th class="col-price">Price</th>
+                            <th class="col-change">24h %</th>
+                            <th class="col-mcap">Market Cap</th>
+                        </tr>
+                    </thead>
+                    <tbody id="crypto-body">
+                        <!-- Content Injected via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Pagination Section -->
+        <div class="pagination-container">
+            <button id="prev-btn" class="page-btn" onclick="changePage(-1)" disabled>
+                <i class="fa-solid fa-arrow-left"></i> Prev
+            </button>
+            
+            <span id="page-indicator" class="page-info">Page 1 of 60</span>
+            
+            <button id="next-btn" class="page-btn" onclick="changePage(1)">
+                Next <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
