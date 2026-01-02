@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global News | Professional Feed</title>
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-accent">GLOBAL</span> NEWS
+            </div>
+            <div class="datetime" id="datetime">Loading...</div>
+        </div>
+    </header>
+
+    <!-- Breaking News Ticker -->
+    <div class="ticker-wrapper">
+        <div class="ticker-label">BREAKING NEWS</div>
+        <div class="ticker-track">
+            <div class="ticker-content" id="ticker-content">
+                Loading updates...
+            </div>
+        </div>
+    </div>
+
+    <!-- Main News Feed -->
+    <main class="news-container" id="news-grid">
+        <!-- News cards injected via JS -->
+    </main>
+
+    <!-- Loading Spinner -->
+    <div class="loader-container" id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- News Modal -->
+    <div id="news-modal" class="modal">
+        <span class="close-btn">&times;</span>
+        <div class="modal-content">
+            <div class="modal-img-container">
+                <img id="modal-img" src="" alt="News Detail">
+            </div>
+            <div class="modal-body">
+                <h2 id="modal-title"></h2>
+                <div class="modal-meta">
+                    <span id="modal-date"></span>
+                    <span class="modal-tag">Source</span>
+                </div>
+                <p id="modal-desc"></p>
+                <a href="#" id="modal-link" target="_blank" class="read-more-btn">Read Full Article</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Script -->
+    <script src="js/main.js"></script>
+</body>
+</html>
