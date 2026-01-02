@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global FX Market</title>
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="logo-area">
+            <h1><i class="fa-solid fa-chart-line"></i> FX Market</h1>
+        </div>
+        <div class="clock-area">
+            <span id="current-time">00:00:00</span>
+            <span id="current-date">Jan 01, 2024</span>
+        </div>
+    </header>
+
+    <!-- Ticker Section -->
+    <div class="ticker-wrap">
+        <div class="ticker-heading">BREAKING</div>
+        <div class="ticker">
+            <div class="ticker-item-list" id="ticker-content">
+                <!-- Filled via JS -->
+                <span class="loading-msg">Loading Market Data...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Search Container -->
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fa-solid fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Search by Country, Currency Name, or Code (e.g. USD)...">
+            </div>
+        </div>
+
+        <!-- Currency Table -->
+        <div class="table-responsive">
+            <table class="currency-table">
+                <thead>
+                    <tr>
+                        <th>Flag</th>
+                        <th>Currency</th>
+                        <th>Code</th>
+                        <th>Price (USD Base)</th>
+                        <th>Change (24h)</th>
+                        <th>Trend</th>
+                    </tr>
+                </thead>
+                <tbody id="currency-body">
+                    <!-- Table Rows Generated via JS -->
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Loader -->
+        <div class="loading-spinner" id="loader">
+            <i class="fa-solid fa-circle-notch fa-spin"></i> Fetching Live Rates...
+        </div>
+
+    </main>
+
+    <!-- Main Script -->
+    <script src="js/main.js"></script>
+</body>
+</html>
